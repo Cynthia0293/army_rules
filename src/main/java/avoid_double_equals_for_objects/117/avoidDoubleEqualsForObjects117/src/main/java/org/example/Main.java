@@ -1,12 +1,12 @@
 package org.example;
 
-import java.time.LocalDateTime;
+import java.time.*;
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在 if 条件中使用 "==" 比较 LocalDateTime 对象引用
- * 测试意图：覆盖比较对象类型：java.time.LocalDateTime 本地日期时间
+ * 违规说明：在 if 条件中使用 "==" 比较 本地日期时间 (java.time.LocalDateTime) 对象引用
+ * 测试意图：覆盖比较对象类型：本地日期时间 (java.time.LocalDateTime)
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -14,10 +14,14 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Main {
+    /**
+     * 主方法，执行程序入口。
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
-        LocalDateTime ldt1 = LocalDateTime.of(2023, 1, 1, 10, 30); // 测试因子(compared_object_type=time_local_date_time)
-        LocalDateTime ldt2 = LocalDateTime.of(2023, 1, 1, 10, 30);
-        if (ldt1 == ldt2) { // 检查点
+        Localdatetime time1 = Localdatetime.now(); // 测试因子(compared_object_type=time_local_date_time)
+        Localdatetime time2 = Localdatetime.now();
+        if (time1 == time2) { // 检查点
             log.info("viol");
         }
     }

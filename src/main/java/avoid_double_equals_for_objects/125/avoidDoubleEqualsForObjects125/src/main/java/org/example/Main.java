@@ -1,12 +1,12 @@
 package org.example;
 
-import java.util.TreeSet;
+import java.util.*;
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在 if 条件中使用 "==" 比较 TreeSet 对象引用
- * 测试意图：覆盖比较对象类型：java.util.TreeSet 树形集合
+ * 违规说明：在 if 条件中使用 "==" 比较 树形集合 (java.util.TreeSet) 对象引用
+ * 测试意图：覆盖比较对象类型：树形集合 (java.util.TreeSet)
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -14,12 +14,14 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Main {
+    /**
+     * 主方法，执行程序入口。
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
-        TreeSet<String> set1 = new TreeSet<>(); // 测试因子(compared_object_type=tree_set)
-        set1.add("test");
-        TreeSet<String> set2 = new TreeSet<>();
-        set2.add("test");
-        if (set1 == set2) { // 检查点
+        TreeSet coll1 = new TreeSet(); // 测试因子(compared_object_type=tree_set)
+        TreeSet coll2 = new TreeSet();
+        if (coll1 == coll2) { // 检查点
             log.info("viol");
         }
     }

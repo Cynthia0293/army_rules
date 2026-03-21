@@ -5,8 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在 if 条件中使用 "==" 比较 Date 对象引用
- * 测试意图：覆盖比较对象类型：java.util.Date 传统日期
+ * 违规说明：在 if 条件中使用 "==" 比较 传统日期 (java.util.Date) 对象引用
+ * 测试意图：覆盖比较对象类型：传统日期 (java.util.Date)
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -14,10 +14,14 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Main {
+    /**
+     * 主方法，执行程序入口。
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
-        Date d1 = new Date(1000); // 测试因子(compared_object_type=util_date)
-        Date d2 = new Date(1000);
-        if (d1 == d2) { // 检查点
+        Date date1 = new Date(); // 测试因子(compared_object_type=util_date)
+        Date date2 = new Date();
+        if (date1 == date2) { // 检查点
             log.info("viol");
         }
     }

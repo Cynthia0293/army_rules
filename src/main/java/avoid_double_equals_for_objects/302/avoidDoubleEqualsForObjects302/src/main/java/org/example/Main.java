@@ -1,11 +1,12 @@
 package org.example;
 
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：使用 "==" 比较通过自动装箱获得的对象引用
- * 测试意图：覆盖对象实例化来源：基本类型自动装箱
+ * 违规说明：在 if 条件中使用 "==" 比较通过 基本类型触发自动装箱 (Autoboxing) 获取的 String 对象引用
+ * 测试意图：覆盖实例化来源：基本类型触发自动装箱 (Autoboxing)
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -13,10 +14,14 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Main {
+    /**
+     * 主方法，执行程序入口。
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
-        Integer i1 = 1; // 测试因子(instantiation_source=autoboxing)
-        Integer i2 = 1;
-        for (int i = 0; i < 1 && i1 == i2; i++) { // 检查点
+        Integer num1 = 1; // 测试因子(instantiation_source=autoboxing)
+        Integer num2 = 1;
+        if (num1 == num2) { // 检查点
             log.info("viol");
         }
     }

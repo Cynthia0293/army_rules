@@ -1,11 +1,12 @@
 package org.example;
 
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在三目运算符的布尔表达式中使用 "==" 比较对象引用
- * 测试意图：覆盖语法上下文：三目运算符布尔表达式
+ * 违规说明：在 三目运算符(?:)的布尔表达式中 使用 "==" 比较 String 对象引用
+ * 测试意图：覆盖语法上下文：三目运算符(?:)的布尔表达式中
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -13,10 +14,16 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Main {
+    /**
+     * 主方法，执行程序入口。
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
         String str1 = new String("test");
         String str2 = new String("test");
-        String result = (str1 == str2) ? "equal" : "not equal"; // 检查点, 测试因子(syntax_context=ternary_condition)
-        log.info("result: {}", result);
+        boolean result = (str1 == str2) ? true : false; // 检查点, 测试因子(syntax_context=ternary_condition)
+        if (result) {
+            log.info("viol");
+        }
     }
 }

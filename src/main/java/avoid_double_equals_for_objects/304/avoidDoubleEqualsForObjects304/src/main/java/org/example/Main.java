@@ -1,11 +1,12 @@
 package org.example;
 
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：使用 "==" 比较通过对象克隆获取的对象引用
- * 测试意图：覆盖对象实例化来源：通过对象克隆获取
+ * 违规说明：在 if 条件中使用 "==" 比较通过 通过对象克隆获取 (Object.clone) 获取的 String 对象引用
+ * 测试意图：覆盖实例化来源：通过对象克隆获取 (Object.clone)
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -13,47 +14,27 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Main {
-    public static void main(String[] args) throws CloneNotSupportedException {
-        CloneableData data1 = new CloneableData("test"); // 测试因子(instantiation_source=clone)
-        CloneableData data2 = (CloneableData) data1.clone();
-        if (data1 == data2) { // 检查点
-            log.info("viol");
-        }
-    }
-
     /**
-     * 可克隆的数据类
+     * 主方法，执行程序入口。
+     * @param args 命令行参数
      */
-    static class CloneableData implements Cloneable {
-        private String value;
-
-        /**
-         * 构造方法
-         *
-         * @param value 值
-         */
-        CloneableData(String value) {
-            this.value = value;
+    public static void main(String[] args) {
+        class CloneableData implements Cloneable {
+            String data;
+            CloneableData(String data) { this.data = data; }
+            @Override
+            public Object clone() throws CloneNotSupportedException {
+                return super.clone();
+            }
         }
-
-        /**
-         * 克隆方法
-         *
-         * @return 克隆副本
-         * @throws CloneNotSupportedException 异常
-         */
-        @Override
-        public Object clone() throws CloneNotSupportedException {
-            return super.clone();
-        }
-
-        /**
-         * 获取值
-         *
-         * @return 值
-         */
-        public String getValue() {
-            return value;
+        try {
+            CloneableData obj1 = new CloneableData("test"); // 测试因子(instantiation_source=clone)
+            CloneableData obj2 = (CloneableData) obj1.clone();
+            if (obj1 == obj2) { // 检查点
+                log.info("viol");
+            }
+        } catch (CloneNotSupportedException e) {
+            log.error("Clone failed", e);
         }
     }
 }
