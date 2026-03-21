@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 继承父项目 -->
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>parent-project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../../pom.xml</relativePath>
+    </parent>
+
+    <!-- 项目坐标 -->
+    <artifactId>avoidDoubleEqualsForObjects</artifactId>
+    <packaging>pom</packaging>
+
+    <!-- 项目描述 -->
+    <name>Avoid Double Equals For Objects</name>
+    <description>对象比较必须使用equals而不是"=="的测试模块</description>
+
+    <modules>
+        <!-- Object Types: 101-138 -->
+        <module>101/avoidDoubleEqualsForObjects101</module>
+        <module>102/avoidDoubleEqualsForObjects102</module>
+        <module>103/avoidDoubleEqualsForObjects103</module>
+        <module>104/avoidDoubleEqualsForObjects104</module>
+        <module>105/avoidDoubleEqualsForObjects105</module>
+        <module>106/avoidDoubleEqualsForObjects106</module>
+        <module>107/avoidDoubleEqualsForObjects107</module>
+        <module>108/avoidDoubleEqualsForObjects108</module>
+        <module>109/avoidDoubleEqualsForObjects109</module>
+        <module>110/avoidDoubleEqualsForObjects110</module>
+        <module>111/avoidDoubleEqualsForObjects111</module>
+        <module>112/avoidDoubleEqualsForObjects112</module>
+        <module>113/avoidDoubleEqualsForObjects113</module>
+        <module>114/avoidDoubleEqualsForObjects114</module>
+        <module>115/avoidDoubleEqualsForObjects115</module>
+        <module>116/avoidDoubleEqualsForObjects116</module>
+        <module>117/avoidDoubleEqualsForObjects117</module>
+        <module>118/avoidDoubleEqualsForObjects118</module>
+        <module>119/avoidDoubleEqualsForObjects119</module>
+        <module>120/avoidDoubleEqualsForObjects120</module>
+        <module>121/avoidDoubleEqualsForObjects121</module>
+        <module>122/avoidDoubleEqualsForObjects122</module>
+        <module>123/avoidDoubleEqualsForObjects123</module>
+        <module>124/avoidDoubleEqualsForObjects124</module>
+        <module>125/avoidDoubleEqualsForObjects125</module>
+        <module>126/avoidDoubleEqualsForObjects126</module>
+        <module>127/avoidDoubleEqualsForObjects127</module>
+        <module>128/avoidDoubleEqualsForObjects128</module>
+        <module>129/avoidDoubleEqualsForObjects129</module>
+        <module>130/avoidDoubleEqualsForObjects130</module>
+        <module>131/avoidDoubleEqualsForObjects131</module>
+        <module>132/avoidDoubleEqualsForObjects132</module>
+        <module>133/avoidDoubleEqualsForObjects133</module>
+        <module>134/avoidDoubleEqualsForObjects134</module>
+        <module>135/avoidDoubleEqualsForObjects135</module>
+        <module>136/avoidDoubleEqualsForObjects136</module>
+        <module>137/avoidDoubleEqualsForObjects137</module>
+        <module>138/avoidDoubleEqualsForObjects138</module>
+        <!-- Comparison Operators: 201-202 -->
+        <module>201/avoidDoubleEqualsForObjects201</module>
+        <module>202/avoidDoubleEqualsForObjects202</module>
+        <!-- Instantiation Sources: 301-306 -->
+        <module>301/avoidDoubleEqualsForObjects301</module>
+        <module>302/avoidDoubleEqualsForObjects302</module>
+        <module>303/avoidDoubleEqualsForObjects303</module>
+        <module>304/avoidDoubleEqualsForObjects304</module>
+        <module>305/avoidDoubleEqualsForObjects305</module>
+        <module>306/avoidDoubleEqualsForObjects306</module>
+        <!-- Syntax Contexts: 401-409 -->
+        <module>401/avoidDoubleEqualsForObjects401</module>
+        <module>402/avoidDoubleEqualsForObjects402</module>
+        <module>403/avoidDoubleEqualsForObjects403</module>
+        <module>404/avoidDoubleEqualsForObjects404</module>
+        <module>405/avoidDoubleEqualsForObjects405</module>
+        <module>406/avoidDoubleEqualsForObjects406</module>
+        <module>407/avoidDoubleEqualsForObjects407</module>
+        <module>408/avoidDoubleEqualsForObjects408</module>
+        <module>409/avoidDoubleEqualsForObjects409</module>
+    </modules>
+</project>

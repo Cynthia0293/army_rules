@@ -1,0 +1,252 @@
+{
+  "test_factors": [
+    {
+      "name": "compared_object_type",
+      "description": "比较对象的具体类型",
+      "values": [
+        {
+          "description": "字符串 (java.lang.String)",
+          "value": "string"
+        },
+        {
+          "description": "字符串缓冲 (java.lang.StringBuffer)",
+          "value": "string_buffer"
+        },
+        {
+          "description": "字符串构建器 (java.lang.StringBuilder)",
+          "value": "string_builder"
+        },
+        {
+          "description": "字节包装类 (java.lang.Byte)",
+          "value": "wrapper_byte"
+        },
+        {
+          "description": "短整型包装类 (java.lang.Short)",
+          "value": "wrapper_short"
+        },
+        {
+          "description": "整型包装类 (java.lang.Integer)",
+          "value": "wrapper_integer"
+        },
+        {
+          "description": "长整型包装类 (java.lang.Long)",
+          "value": "wrapper_long"
+        },
+        {
+          "description": "单精度浮点包装类 (java.lang.Float)",
+          "value": "wrapper_float"
+        },
+        {
+          "description": "双精度浮点包装类 (java.lang.Double)",
+          "value": "wrapper_double"
+        },
+        {
+          "description": "字符包装类 (java.lang.Character)",
+          "value": "wrapper_character"
+        },
+        {
+          "description": "布尔包装类 (java.lang.Boolean)",
+          "value": "wrapper_boolean"
+        },
+        {
+          "description": "高精度整数 (java.math.BigInteger)",
+          "value": "big_integer"
+        },
+        {
+          "description": "高精度浮点数 (java.math.BigDecimal)",
+          "value": "big_decimal"
+        },
+        {
+          "description": "传统日期 (java.util.Date)",
+          "value": "util_date"
+        },
+        {
+          "description": "本地日期 (java.time.LocalDate)",
+          "value": "time_local_date"
+        },
+        {
+          "description": "本地时间 (java.time.LocalTime)",
+          "value": "time_local_time"
+        },
+        {
+          "description": "本地日期时间 (java.time.LocalDateTime)",
+          "value": "time_local_date_time"
+        },
+        {
+          "description": "时区日期时间 (java.time.ZonedDateTime)",
+          "value": "time_zoned_date_time"
+        },
+        {
+          "description": "时间戳 (java.time.Instant)",
+          "value": "time_instant"
+        },
+        {
+          "description": "全局唯一标识符 (java.util.UUID)",
+          "value": "uuid"
+        },
+        {
+          "description": "空值包装容器 (java.util.Optional)",
+          "value": "optional"
+        },
+        {
+          "description": "动态数组集合 (java.util.ArrayList)",
+          "value": "array_list"
+        },
+        {
+          "description": "链表集合 (java.util.LinkedList)",
+          "value": "linked_list"
+        },
+        {
+          "description": "哈希集合 (java.util.HashSet)",
+          "value": "hash_set"
+        },
+        {
+          "description": "树形集合 (java.util.TreeSet)",
+          "value": "tree_set"
+        },
+        {
+          "description": "哈希映射表 (java.util.HashMap)",
+          "value": "hash_map"
+        },
+        {
+          "description": "树形映射表 (java.util.TreeMap)",
+          "value": "tree_map"
+        },
+        {
+          "description": "字节数组 (byte[])",
+          "value": "array_primitive_byte"
+        },
+        {
+          "description": "短整型数组 (short[])",
+          "value": "array_primitive_short"
+        },
+        {
+          "description": "整型数组 (int[])",
+          "value": "array_primitive_int"
+        },
+        {
+          "description": "长整型数组 (long[])",
+          "value": "array_primitive_long"
+        },
+        {
+          "description": "单精度浮点数组 (float[])",
+          "value": "array_primitive_float"
+        },
+        {
+          "description": "双精度浮点数组 (double[])",
+          "value": "array_primitive_double"
+        },
+        {
+          "description": "字符数组 (char[])",
+          "value": "array_primitive_char"
+        },
+        {
+          "description": "布尔数组 (boolean[])",
+          "value": "array_primitive_boolean"
+        },
+        {
+          "description": "字符串数组 (String[])",
+          "value": "array_object_string"
+        },
+        {
+          "description": "包装类数组 (Integer[])",
+          "value": "array_object_integer"
+        },
+        {
+          "description": "通用对象数组 (Object[])",
+          "value": "array_object_general"
+        },
+        {
+          "description": "自定义业务实体类 (Custom POJO)",
+          "value": "custom_pojo"
+        }
+      ]
+    },
+    {
+      "name": "comparison_operator",
+      "description": "违反规范的具体比较操作符",
+      "values": [
+        {
+          "description": "使用双等号判断相等 (==)",
+          "value": "equals"
+        },
+        {
+          "description": "使用不等号判断不相等 (!=)",
+          "value": "not_equals"
+        }
+      ]
+    },
+    {
+      "name": "instantiation_source",
+      "description": "参与比较的对象的实例化来源",
+      "values": [
+        {
+          "description": "显式使用 new 关键字创建对象",
+          "value": "explicit_new"
+        },
+        {
+          "description": "基本类型触发自动装箱 (Autoboxing)",
+          "value": "autoboxing"
+        },
+        {
+          "description": "通过静态工厂方法获取对象 (如 String.valueOf)",
+          "value": "static_factory"
+        },
+        {
+          "description": "通过对象克隆获取 (Object.clone)",
+          "value": "clone"
+        },
+        {
+          "description": "通过反序列化获取对象",
+          "value": "deserialization"
+        },
+        {
+          "description": "通过反射机制实例化对象",
+          "value": "reflection"
+        }
+      ]
+    },
+    {
+      "name": "syntax_context",
+      "description": "发生违规比较的抽象语法树(AST)节点位置",
+      "values": [
+        {
+          "description": "if 语句的条件表达式中",
+          "value": "if_condition"
+        },
+        {
+          "description": "while 循环的条件表达式中",
+          "value": "while_condition"
+        },
+        {
+          "description": "do-while 循环的条件表达式中",
+          "value": "do_while_condition"
+        },
+        {
+          "description": "for 循环的终止条件表达式中",
+          "value": "for_condition"
+        },
+        {
+          "description": "三目运算符(?:)的布尔表达式中",
+          "value": "ternary_condition"
+        },
+        {
+          "description": "变量赋值操作的右值表达式中",
+          "value": "variable_assignment"
+        },
+        {
+          "description": "方法 return 语句的返回值表达式中",
+          "value": "return_statement"
+        },
+        {
+          "description": "方法调用时传入的参数表达式中",
+          "value": "method_argument"
+        },
+        {
+          "description": "Lambda 表达式的方法体中",
+          "value": "lambda_body"
+        }
+      ]
+    }
+  ]
+}

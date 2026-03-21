@@ -1,0 +1,47 @@
+{
+  "test_factors": [
+    {
+      "name": "factor_name_1",
+      "description": "测试因子1的中文描述",
+      "values": [
+        {
+          "description": "取值1的中文描述",
+          "value": "value_key_1_1"
+        },
+        {
+          "description": "取值2的中文描述",
+          "value": "value_key_1_2"
+        }
+      ]
+    },
+    {
+      "name": "factor_name_2",
+      "description": "测试因子2的中文描述",
+      "values": [
+        {
+          "description": "取值1的中文描述",
+          "value": "value_key_2_1"
+        },
+        {
+          "description": "取值2的中文描述",
+          "value": "value_key_2_2"
+        },
+        {
+          "description": "取值3的中文描述",
+          "value": "value_key_2_3"
+        }
+      ]
+    },
+    {
+      "name": "factor_name_3",
+      "description": "测试因子3的中文描述",
+      "values": [
+        {
+          "description": "取值1的中文描述",
+          "value": "value_key_3_1"
+        }
+      ]
+    }
+  ]
+}
+
