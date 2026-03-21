@@ -108,6 +108,7 @@
 
     <modules>
         <module>src/main/java/avoid_double_equals_for_objects</module>
+        <module>src/main/java/ensure_no_useless_object_references</module>
     </modules>
 </project>
 

@@ -1,0 +1,168 @@
+{
+  "test_factors": [
+    {
+      "name": "holder_object_type",
+      "description": "持有者对象的类型：哪些数据结构或对象长期持有无用引用",
+      "values": [
+        { 
+          "description": "java.util.HashMap 引用残留", 
+          "value": "hash_map" 
+        },
+        { 
+          "description": "java.util.ArrayList 引用残留", 
+          "value": "array_list" 
+        },
+        { 
+          "description": "java.util.Stack 引用残留", 
+          "value": "stack" 
+        },
+        { 
+          "description": "java.lang.ThreadLocal 引用残留", 
+          "value": "thread_local" 
+        },
+        { 
+          "description": "Object[] 数组引用残留", 
+          "value": "object_array" 
+        },
+        { 
+          "description": "自定义监听器 (Listener) 引用残留", 
+          "value": "custom_listener" 
+        },
+        { 
+          "description": "自定义回调接口 (Callback) 引用残留", 
+          "value": "custom_callback" 
+        },
+        { 
+          "description": "非静态内部类隐式持有外部类", 
+          "value": "non_static_inner_class" 
+        },
+        { 
+          "description": "匿名内部类隐式持有外部类", 
+          "value": "anonymous_class" 
+        },
+        { 
+          "description": "ConcurrentHashMap 视图（如 keySet）残留", 
+          "value": "concurrent_hash_map_view" 
+        },
+        { 
+          "description": "类加载器（ClassLoader）引用残留", 
+          "value": "classloader_leak" 
+        },
+        { 
+          "description": "java.util.WeakHashMap 引用残留", 
+          "value": "weak_hash_map" 
+        },
+        { 
+          "description": "String.intern() 滥用导致常量池残留", 
+          "value": "string_intern" 
+        }
+      ]
+    },
+    {
+      "name": "storage_scope",
+      "description": "持有者的生命周期作用域：引用被保留的范围和时机",
+      "values": [
+        { 
+          "description": "静态成员变量作用域", 
+          "value": "static" 
+        },
+        { 
+          "description": "单例对象成员变量作用域", 
+          "value": "singleton" 
+        },
+        { 
+          "description": "全局注册表作用域", 
+          "value": "global_registry" 
+        },
+        { 
+          "description": "线程池复用作用域", 
+          "value": "thread_pool" 
+        },
+        { 
+          "description": "Web 请求 (Request) 作用域属性未清理", 
+          "value": "web_request" 
+        },
+        { 
+          "description": "Web 会话 (Session) 作用域属性未清理", 
+          "value": "web_session" 
+        },
+        { 
+          "description": "类加载器作用域（如热部署场景）", 
+          "value": "classloader_redeploy" 
+        }
+      ]
+    },
+    {
+      "name": "coding_defect",
+      "description": "编码错误模式：导致引用无法及时释放的具体代码缺陷",
+      "values": [
+        { 
+          "description": "try-catch 异常跳过了清理代码", 
+          "value": "exception_skip" 
+        },
+        { 
+          "description": "if-else 分支遗漏了清理逻辑", 
+          "value": "branch_miss" 
+        },
+        { 
+          "description": "HashCode 改变导致 remove 失败", 
+          "value": "hash_changed" 
+        },
+        { 
+          "description": "数组下标减少但未赋 null", 
+          "value": "no_null_assign" 
+        },
+        { 
+          "description": "监听器注册后未注销", 
+          "value": "listener_not_unregister" 
+        },
+        { 
+          "description": "回调注册后未注销", 
+          "value": "callback_not_unregister" 
+        },
+        { 
+          "description": "集合清空后容器本身未置 null", 
+          "value": "container_not_null" 
+        },
+        { 
+          "description": "资源包装类未关闭", 
+          "value": "resource_not_closed" 
+        },
+        { 
+          "description": "隐式 this 逃逸（在构造器中注册监听器）", 
+          "value": "implicit_this_escape" 
+        },
+        { 
+          "description": "finalize 方法误用导致对象复活", 
+          "value": "finalize_resurrection" 
+        }
+      ]
+    },
+    {
+      "name": "reference_type",
+      "description": "引用类型的选择与误用：强/软/弱/虚引用使用不当导致的内存残留",
+      "values": [
+        { 
+          "description": "强引用持有对象，未及时置 null", 
+          "value": "strong_no_null" 
+        },
+        { 
+          "description": "WeakHashMap 被强引用间接持有，弱引用失效", 
+          "value": "weak_map_strong_hold" 
+        },
+        { 
+          "description": "软引用缓存未设置淘汰策略，导致 OOM", 
+          "value": "soft_cache_no_evict" 
+        },
+        { 
+          "description": "ReferenceQueue 未处理，引用对象残留", 
+          "value": "queue_not_cleaned" 
+        },
+        { 
+          "description": "虚引用（PhantomReference）误用导致无法回收", 
+          "value": "phantom_misuse" 
+        }
+      ]
+    }
+  ]
+}
