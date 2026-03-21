@@ -19,9 +19,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        Zoneddatetime time1 = Zoneddatetime.now(); // 测试因子(compared_object_type=time_zoned_date_time)
-        Zoneddatetime time2 = Zoneddatetime.now();
-        if (time1 == time2) { // 检查点
+        ZonedDateTime zdt1 = ZonedDateTime.now(); // 测试因子(compared_object_type=time_zoned_date_time)
+        ZonedDateTime zdt2 = ZonedDateTime.now();
+        if (zdt1 == zdt2) { // 检查点
             log.info("viol");
         }
     }

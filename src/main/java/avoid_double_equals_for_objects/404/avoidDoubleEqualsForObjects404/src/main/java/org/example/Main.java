@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         String str1 = new String("test");
         String str2 = new String("test");
-        for (int i = 0; str1 == str2; i++) { // 检查点, 测试因子(syntax_context=for_condition)
+        for (; str1 == str2; ) { // 检查点, 测试因子(syntax_context=for_condition)
             log.info("viol");
             break;
         }

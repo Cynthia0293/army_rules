@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        ArrayList coll1 = new ArrayList(); // 测试因子(compared_object_type=array_list)
-        ArrayList coll2 = new ArrayList();
+        ArrayList<Object> coll1 = new ArrayList<>(); // 测试因子(compared_object_type=array_list)
+        ArrayList<Object> coll2 = new ArrayList<>();
         if (coll1 == coll2) { // 检查点
             log.info("viol");
         }

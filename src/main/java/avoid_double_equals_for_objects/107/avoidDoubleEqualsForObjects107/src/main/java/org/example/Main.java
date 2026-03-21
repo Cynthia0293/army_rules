@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        Long num1 = 1; // 测试因子(compared_object_type=wrapper_long)
-        Long num2 = 1;
+        Long num1 = 1L; // 测试因子(compared_object_type=wrapper_long)
+        Long num2 = 1L;
         if (num1 == num2) { // 检查点
             log.info("viol");
         }

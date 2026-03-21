@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        HashMap coll1 = new HashMap(); // 测试因子(compared_object_type=hash_map)
-        HashMap coll2 = new HashMap();
+        HashMap<Object, Object> coll1 = new HashMap<>(); // 测试因子(compared_object_type=hash_map)
+        HashMap<Object, Object> coll2 = new HashMap<>();
         if (coll1 == coll2) { // 检查点
             log.info("viol");
         }

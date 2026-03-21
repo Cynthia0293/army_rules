@@ -21,6 +21,6 @@ public class Main {
     public static void main(String[] args) {
         String str1 = new String("test");
         String str2 = new String("test");
-        log.info("result: " + (str1 == str2)); // 检查点, 测试因子(syntax_context=method_argument)
+        log.info("result: {}", str1 == str2); // 检查点, 测试因子(syntax_context=method_argument)
     }
 }

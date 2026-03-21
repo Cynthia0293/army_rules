@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        LinkedList coll1 = new LinkedList(); // 测试因子(compared_object_type=linked_list)
-        LinkedList coll2 = new LinkedList();
+        LinkedList<Object> coll1 = new LinkedList<>(); // 测试因子(compared_object_type=linked_list)
+        LinkedList<Object> coll2 = new LinkedList<>();
         if (coll1 == coll2) { // 检查点
             log.info("viol");
         }

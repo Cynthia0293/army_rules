@@ -21,6 +21,19 @@ public class Main {
     public static void main(String[] args) {
         String str1 = new String("test");
         String str2 = new String("test");
-        return (str1 == str2); // 检查点, 测试因子(syntax_context=return_statement)
+        boolean result = compare(str1, str2);
+        log.info("result: {}", result);
     }
+
+    /**
+     * 比较方法
+     * @param s1 字符串1
+     * @param s2 字符串2
+     * @return 比较结果
+     */
+    private static boolean compare(String s1, String s2) {
+        return s1 == s2; // 检查点, 测试因子(syntax_context=return_statement)
+    } 
 }
+
+

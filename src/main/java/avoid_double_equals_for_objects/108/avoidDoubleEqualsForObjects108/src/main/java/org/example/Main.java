@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        Float num1 = 1; // 测试因子(compared_object_type=wrapper_float)
-        Float num2 = 1;
+        Float num1 = 1f; // 测试因子(compared_object_type=wrapper_float)
+        Float num2 = 1f;
         if (num1 == num2) { // 检查点
             log.info("viol");
         }

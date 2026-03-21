@@ -19,9 +19,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        Localdate time1 = Localdate.now(); // 测试因子(compared_object_type=time_local_date)
-        Localdate time2 = Localdate.now();
-        if (time1 == time2) { // 检查点
+        LocalDate ld1 = LocalDate.of(2023, 1, 1); // 测试因子(compared_object_type=time_local_date)
+        LocalDate ld2 = LocalDate.of(2023, 1, 1);
+        if (ld1 == ld2) { // 检查点
             log.info("viol");
         }
     }

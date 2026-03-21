@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        HashSet coll1 = new HashSet(); // 测试因子(compared_object_type=hash_set)
-        HashSet coll2 = new HashSet();
+        HashSet<Object> coll1 = new HashSet<>(); // 测试因子(compared_object_type=hash_set)
+        HashSet<Object> coll2 = new HashSet<>();
         if (coll1 == coll2) { // 检查点
             log.info("viol");
         }

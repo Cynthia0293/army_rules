@@ -20,15 +20,14 @@ public class Main {
      */
     public static void main(String[] args) {
         class CloneableData implements Cloneable {
-            String data;
-            CloneableData(String data) { this.data = data; }
+            CloneableData() { }
             @Override
             public Object clone() throws CloneNotSupportedException {
                 return super.clone();
             }
         }
         try {
-            CloneableData obj1 = new CloneableData("test"); // 测试因子(instantiation_source=clone)
+            CloneableData obj1 = new CloneableData(); // 测试因子(instantiation_source=clone)
             CloneableData obj2 = (CloneableData) obj1.clone();
             if (obj1 == obj2) { // 检查点
                 log.info("viol");

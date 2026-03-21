@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        TreeSet coll1 = new TreeSet(); // 测试因子(compared_object_type=tree_set)
-        TreeSet coll2 = new TreeSet();
+        TreeSet<Object> coll1 = new TreeSet<>(); // 测试因子(compared_object_type=tree_set)
+        TreeSet<Object> coll2 = new TreeSet<>();
         if (coll1 == coll2) { // 检查点
             log.info("viol");
         }

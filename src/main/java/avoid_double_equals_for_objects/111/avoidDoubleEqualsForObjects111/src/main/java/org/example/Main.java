@@ -19,8 +19,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        Boolean num1 = 1; // 测试因子(compared_object_type=wrapper_boolean)
-        Boolean num2 = 1;
+        Boolean num1 = true; // 测试因子(compared_object_type=wrapper_boolean)
+        Boolean num2 = true;
         if (num1 == num2) { // 检查点
             log.info("viol");
         }

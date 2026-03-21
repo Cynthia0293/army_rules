@@ -20,8 +20,8 @@ public class Main {
      */
     public static void main(String[] args) {
         try {
-            String str1 = String.class.newInstance(); // 测试因子(instantiation_source=reflection)
-            String str2 = String.class.newInstance();
+            String str1 = String.class.getDeclaredConstructor().newInstance(); // 测试因子(instantiation_source=reflection)
+            String str2 = String.class.getDeclaredConstructor().newInstance();
             if (str1 == str2) { // 检查点
                 log.info("viol");
             }
