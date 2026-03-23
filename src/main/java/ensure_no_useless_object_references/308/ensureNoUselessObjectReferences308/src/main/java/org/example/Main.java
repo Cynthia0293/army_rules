@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.*;
 import java.io.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  * 资源包装类（模拟）
  */
 class ResourceWrapper implements Closeable {
+    @SuppressWarnings("unused")
     private byte[] buffer = new byte[1024 * 1024]; // 1MB缓冲区
 
     public void process() {
@@ -39,6 +39,7 @@ public class Main {
      *
      * @param args 命令行参数
      */
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
 
         // 创建资源

@@ -6,6 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for Parent Project" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
         <module name="avoidDoubleEqualsForObjects130" />
         <module name="avoidDoubleEqualsForObjects131" />
         <module name="avoidDoubleEqualsForObjects129" />
@@ -35,8 +44,8 @@
         <module name="avoidDoubleEqualsForObjects403" />
         <module name="ensureNoUselessObjectReferences206" />
         <module name="ensureNoUselessObjectReferences404" />
-        <module name="ensureNoUselessObjectReferences207" />
         <module name="ensureNoUselessObjectReferences405" />
+        <module name="ensureNoUselessObjectReferences207" />
         <module name="ensureNoUselessObjectReferences204" />
         <module name="ensureNoUselessObjectReferences402" />
         <module name="ensureNoUselessObjectReferences205" />

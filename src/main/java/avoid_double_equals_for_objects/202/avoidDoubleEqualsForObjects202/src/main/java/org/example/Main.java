@@ -20,8 +20,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        String str1 = new String("test");
-        String str2 = new String("different");
+        String str1 = "test1";
+        String str2 = "test2";
+        log.info("str1: {}, str2: {}", str1, str2);
         if (str1 != str2) { // 检查点, 测试因子(comparison_operator=not_equals)
             log.info("viol");
         }

@@ -19,6 +19,7 @@ class EventRegistry {
  * 业务对象：在构造器中进行this逃逸
  */
 class BusinessService {
+    @SuppressWarnings("unused")
     private byte[] largeData = new byte[1024 * 1024]; // 1MB
 
     public BusinessService() {
@@ -50,6 +51,7 @@ public class Main {
         // 创建业务服务对象
         // 在构造器执行期间，this已经被注册到全局注册表中
         BusinessService service = new BusinessService();
+        log.info("Service allocated: {}", service != null);
         log.info("BusinessService instance created");
 
         // 即使service对象本地引用被清理，全局注册表中的引用仍然存在

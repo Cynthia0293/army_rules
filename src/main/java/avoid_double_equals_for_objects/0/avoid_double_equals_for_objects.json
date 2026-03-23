@@ -53,10 +53,6 @@
           "value": "big_integer"
         },
         {
-          "description": "高精度浮点数 (java.math.BigDecimal)",
-          "value": "big_decimal"
-        },
-        {
           "description": "传统日期 (java.util.Date)",
           "value": "util_date"
         },

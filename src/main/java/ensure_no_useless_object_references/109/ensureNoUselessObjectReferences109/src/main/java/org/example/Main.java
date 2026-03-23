@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  * 大型资源对象类
  */
 class ResourceContext {
+    @SuppressWarnings("unused")
     private byte[] data = new byte[1024 * 1024]; // 1MB
 }
 

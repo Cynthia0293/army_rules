@@ -1,6 +1,5 @@
 package org.example;
 
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -10,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @author 曹卓熠
  * @version 1.0.0
- * @since 2026-03-21
+ * @since 2026-03-23
  */
 @Slf4j
 public class Main {
@@ -20,11 +19,12 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        String str1 = new String("test");
-        String str2 = new String("test");
-        for (; str1 == str2; ) { // 检查点, 测试因子(syntax_context=for_condition)
+        String target = "test";
+        String heapString = new StringBuilder("te").append("st").toString();
+        String[] data = {"test", "test", heapString};
+
+        for (int i = 0; i < data.length && data[i] == target; i++) { // 检查点, 测试因子(syntax_context=for_condition)
             log.info("viol");
-            break;
         }
     }
 }

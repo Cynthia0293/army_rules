@@ -2,6 +2,12 @@ package org.example;
 
 
 import lombok.extern.slf4j.Slf4j;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
@@ -19,12 +25,35 @@ public class Main {
      *
      * @param args 命令行参数
      */
-    public static void main(String[] args) {
-        // Note: Deserialization would require complex setup, using simplified version
-        String str1 = "test"; // 测试因子(instantiation_source=deserialization)
-        String str2 = "test";
-        if (str1 == str2) { // 检查点
+
+    public static void main(String[] args) throws Exception {
+
+        String original = "test_data";
+
+        byte[] serializedData = serialize(original);
+
+        String deserializedStr = (String) deserialize(serializedData); // 测试因子(instantiation_source=deserialization)
+
+        String target = "test_data";
+
+        if (deserializedStr == target) { // 检查点
             log.info("viol");
         }
     }
+
+    private static byte[] serialize(String value) throws IOException {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream)) {
+            objectOutputStream.writeObject(value);
+            objectOutputStream.flush();
+            return byteArrayOutputStream.toByteArray();
+        }
+    }
+
+    private static Object deserialize(byte[] bytes) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(bytes))) {
+            return objectInputStream.readObject();
+        }
+    }
 }
+

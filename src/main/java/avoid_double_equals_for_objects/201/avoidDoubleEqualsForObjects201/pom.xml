@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 继承父模块 -->
     <parent>
         <groupId>org.example</groupId>
         <artifactId>avoidDoubleEqualsForObjects</artifactId>
@@ -12,11 +11,6 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <!-- 项目坐标 -->
     <artifactId>avoidDoubleEqualsForObjects201</artifactId>
-    <packaging>jar</packaging>
 
-    <!-- 项目描述 -->
-    <name>Avoid Double Equals For Objects 201</name>
-    <description>测试用例：使用==比较对象</description>
 </project>

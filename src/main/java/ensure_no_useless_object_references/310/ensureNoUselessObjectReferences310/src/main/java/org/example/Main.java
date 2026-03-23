@@ -19,9 +19,11 @@ class ResurrectionContainer {
  * 可复活的对象
  */
 class ResurrectableObject {
+    @SuppressWarnings("unused")
     private byte[] largeData = new byte[1024 * 1024]; // 1MB
 
     @Override
+    @SuppressWarnings("removal")
     protected void finalize() throws Throwable {
         // 危险：在finalize中将this注册到全局容器，导致对象复活
         ResurrectionContainer.storeResurrected(this); // 检查点, 测试因子(coding_defect=finalize_resurrection)
@@ -51,6 +53,7 @@ public class Main {
 
         // 创建对象
         ResurrectableObject obj = new ResurrectableObject();
+        log.info("Object allocated: {}", obj != null);
         log.info("Object created");
 
         // 清除本地引用，对象应该被垃圾回收

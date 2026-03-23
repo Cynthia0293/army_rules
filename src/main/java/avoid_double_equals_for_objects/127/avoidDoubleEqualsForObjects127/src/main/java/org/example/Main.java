@@ -1,13 +1,12 @@
 package org.example;
 
-import java.util.*;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在 if 条件中使用 "==" 比较 树形映射表 (java.util.TreeMap) 对象引用
- * 测试意图：覆盖比较对象类型：树形映射表 (java.util.TreeMap)
+ * 违规说明：在 if 条件中使用 "==" 比较 字节数组 (byte[]) 对象引用
+ * 测试意图：覆盖比较对象类型：字节数组 (byte[])
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -21,9 +20,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        TreeMap<Object, Object> coll1 = new TreeMap<>(); // 测试因子(compared_object_type=tree_map)
-        TreeMap<Object, Object> coll2 = new TreeMap<>();
-        if (coll1 == coll2) { // 检查点
+        byte[] arr1 = new byte[1]; // 测试因子(compared_object_type=array_primitive_byte)
+        byte[] arr2 = new byte[1];
+        if (arr1 == arr2) { // 检查点
             log.info("viol");
         }
     }

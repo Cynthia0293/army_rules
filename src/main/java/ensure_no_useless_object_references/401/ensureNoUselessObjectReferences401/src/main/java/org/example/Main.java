@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.*;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -36,6 +35,7 @@ public class Main {
         Object newData = new Object();
         strongReference = newData; // 替换了 strongReference
         log.info("Replaced strong reference");
+        log.info("Current strong reference exists: {}", strongReference != null);
 
         // 违规点：largeData 虽然已经被替换※，但它仍然需要等待 strongReference 也不等熱永久持有
         // 正确做法： strongReference = null; 之美业务完成后。繁钒正蝛靛也就漤轪有全罠

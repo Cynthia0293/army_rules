@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -10,7 +10,5 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <artifactId>avoidDoubleEqualsForObjects115</artifactId>
-    <packaging>jar</packaging>
-    <name>Avoid Double Equals For Objects 115</name>
-    <description>测试用例：LocalDate对象使用==比较</description>
+
 </project>

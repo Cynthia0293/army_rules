@@ -14,9 +14,5 @@
 
     <!-- 项目坐标 -->
     <artifactId>avoidDoubleEqualsForObjects101</artifactId>
-    <packaging>jar</packaging>
 
-    <!-- 项目描述 -->
-    <name>Avoid Double Equals For Objects 101</name>
-    <description>测试用例：字符串对象使用==比较在if条件中</description>
 </project>

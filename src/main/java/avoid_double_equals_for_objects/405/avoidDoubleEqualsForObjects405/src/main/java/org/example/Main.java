@@ -20,8 +20,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        String str1 = new String("test");
-        String str2 = new String("test");
+        String str1 = "test";
+        String str2 = "test";
+        log.info("str1: {}, str2: {}", str1, str2);
         boolean result = (str1 == str2) ? true : false; // 检查点, 测试因子(syntax_context=ternary_condition)
         if (result) {
             log.info("viol");

@@ -5,8 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在 if 条件中使用 "==" 比较 布尔数组 (boolean[]) 对象引用
- * 测试意图：覆盖比较对象类型：布尔数组 (boolean[])
+ * 违规说明：在 if 条件中使用 "==" 比较 字符串数组 (String[]) 对象引用
+ * 测试意图：覆盖比较对象类型：字符串数组 (String[])
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -20,8 +20,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        boolean[] arr1 = new boolean[1]; // 测试因子(compared_object_type=array_primitive_boolean)
-        boolean[] arr2 = new boolean[1];
+        String[] arr1 = new String[1]; // 测试因子(compared_object_type=array_object_string)
+        String[] arr2 = new String[1];
         if (arr1 == arr2) { // 检查点
             log.info("viol");
         }

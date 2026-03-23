@@ -1,8 +1,8 @@
 package org.example;
 
-import java.math.BigInteger;
-
 import lombok.extern.slf4j.Slf4j;
+
+import java.math.BigInteger;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
@@ -21,8 +21,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        BigInteger bi1 = new BigInteger("123"); // 测试因子(compared_object_type=big_integer)
-        BigInteger bi2 = new BigInteger("123");
+        BigInteger bi1 = BigInteger.valueOf(123L); // 测试因子(compared_object_type=big_integer)
+        BigInteger bi2 = BigInteger.valueOf(123L);
         if (bi1 == bi2) { // 检查点
             log.info("viol");
         }

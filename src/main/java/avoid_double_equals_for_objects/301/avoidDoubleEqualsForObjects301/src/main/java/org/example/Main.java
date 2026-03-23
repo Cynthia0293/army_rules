@@ -20,8 +20,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        String str1 = new String("test"); // 测试因子(instantiation_source=explicit_new)
-        String str2 = new String("test");
+        String str1 = "test"; // 测试因子(instantiation_source=explicit_new)
+        String str2 = "test";
+        log.info("str1: {}, str2: {}", str1, str2);
         if (str1 == str2) { // 检查点
             log.info("viol");
         }

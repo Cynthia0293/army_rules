@@ -10,7 +10,5 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <artifactId>avoidDoubleEqualsForObjects409</artifactId>
-    <packaging>jar</packaging>
-    <name>Avoid Double Equals For Objects 409</name>
-    <description>测试用例：Lambda表达式中使用==比较</description>
+
 </project>

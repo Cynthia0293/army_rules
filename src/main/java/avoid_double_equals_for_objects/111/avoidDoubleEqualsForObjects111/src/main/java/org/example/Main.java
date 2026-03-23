@@ -20,8 +20,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        Boolean num1 = true; // 测试因子(compared_object_type=wrapper_boolean)
-        Boolean num2 = true;
+        Boolean num1 = (System.nanoTime() & 1L) == 0L; // 测试因子(compared_object_type=wrapper_boolean)
+        Boolean num2 = (System.currentTimeMillis() & 1L) == 0L;
+        log.info("num1: {}, num2: {}", num1, num2);
         if (num1 == num2) { // 检查点
             log.info("viol");
         }

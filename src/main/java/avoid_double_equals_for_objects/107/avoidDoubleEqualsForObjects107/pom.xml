@@ -14,9 +14,6 @@
 
     <!-- 项目坐标 -->
     <artifactId>avoidDoubleEqualsForObjects107</artifactId>
-    <packaging>jar</packaging>
 
-    <!-- 项目描述 -->
-    <name>Avoid Double Equals For Objects 107</name>
     <description>测试用例：Long对象使用==比较</description>
 </project>

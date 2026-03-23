@@ -3,20 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <!-- 继承父模块 -->
     <parent>
         <groupId>org.example</groupId>
         <artifactId>avoidDoubleEqualsForObjects</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
-
-    <!-- 项目坐标 -->
     <artifactId>avoidDoubleEqualsForObjects202</artifactId>
-    <packaging>jar</packaging>
 
-    <!-- 项目描述 -->
-    <name>Avoid Double Equals For Objects 202</name>
-    <description>测试用例：字符串对象使用!=比较在三目运算符中</description>
 </project>

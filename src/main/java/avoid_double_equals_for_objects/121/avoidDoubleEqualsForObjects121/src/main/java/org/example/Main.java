@@ -1,13 +1,13 @@
 package org.example;
 
-import java.util.Optional;
-
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在 if 条件中使用 "==" 比较 空值包装容器 (java.util.Optional) 对象引用
- * 测试意图：覆盖比较对象类型：空值包装容器 (java.util.Optional)
+ * 违规说明：在 if 条件中使用 "==" 比较 动态数组集合 (java.util.ArrayList) 对象引用
+ * 测试意图：覆盖比较对象类型：动态数组集合 (java.util.ArrayList)
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -21,9 +21,9 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        Optional<String> opt1 = Optional.of("test"); // 测试因子(compared_object_type=optional)
-        Optional<String> opt2 = Optional.of("test");
-        if (opt1 == opt2) { // 检查点
+        ArrayList<Object> coll1 = new ArrayList<>(); // 测试因子(compared_object_type=array_list)
+        ArrayList<Object> coll2 = new ArrayList<>();
+        if (coll1 == coll2) { // 检查点
             log.info("viol");
         }
     }

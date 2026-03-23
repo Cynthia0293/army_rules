@@ -10,7 +10,5 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <artifactId>avoidDoubleEqualsForObjects402</artifactId>
-    <packaging>jar</packaging>
-    <name>Avoid Double Equals For Objects 402</name>
-    <description>测试用例：while循环条件中使用==比较</description>
+
 </project>

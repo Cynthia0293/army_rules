@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * 外部类：表示一个大型资源对象（模拟 WebView 或类似的持有大量资源的对象）
  */
 class HeavyOuterObject {
+    @SuppressWarnings("unused")
     private byte[] largeData = new byte[1024 * 1024]; // 1MB 虚拟大数据
 
     /**

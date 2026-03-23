@@ -1,13 +1,13 @@
 package org.example;
 
-import java.util.*;
-
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
 
 /**
  * 规范：对象比较必须使用 equals 而不是 "=="
- * 违规说明：在 if 条件中使用 "==" 比较 树形集合 (java.util.TreeSet) 对象引用
- * 测试意图：覆盖比较对象类型：树形集合 (java.util.TreeSet)
+ * 违规说明：在 if 条件中使用 "==" 比较 哈希映射表 (java.util.HashMap) 对象引用
+ * 测试意图：覆盖比较对象类型：哈希映射表 (java.util.HashMap)
  *
  * @author 曹卓熠
  * @version 1.0.0
@@ -21,8 +21,8 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        TreeSet<Object> coll1 = new TreeSet<>(); // 测试因子(compared_object_type=tree_set)
-        TreeSet<Object> coll2 = new TreeSet<>();
+        HashMap<Object, Object> coll1 = new HashMap<>(); // 测试因子(compared_object_type=hash_map)
+        HashMap<Object, Object> coll2 = new HashMap<>();
         if (coll1 == coll2) { // 检查点
             log.info("viol");
         }

@@ -1,6 +1,5 @@
 package org.example;
 
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -20,11 +19,14 @@ public class Main {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        String str1 = new String("test");
-        String str2 = new String("test");
-        while (str1 == str2) { // 检查点, 测试因子(syntax_context=while_condition)
+        String target = "test";
+        String heapString = new StringBuilder("te").append("st").toString();
+        String[] data = {"test", "test", heapString};
+        int i = 0;
+
+        while (i < data.length && data[i] == target) { // 检查点, 测试因子(syntax_context=while_condition)
             log.info("viol");
-            break;
+            i++;
         }
     }
 }

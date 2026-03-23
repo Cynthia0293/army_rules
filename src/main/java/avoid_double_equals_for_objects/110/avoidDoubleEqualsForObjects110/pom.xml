@@ -10,7 +10,5 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <artifactId>avoidDoubleEqualsForObjects110</artifactId>
-    <packaging>jar</packaging>
-    <name>Avoid Double Equals For Objects 110</name>
-    <description>测试用例：Character对象使用==比较</description>
+
 </project>
