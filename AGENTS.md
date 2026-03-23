@@ -31,11 +31,12 @@ tools: [read, write, edit, bash]
 5. 生成代码的核心目标是触发静态检查，不要求代码必须能够正常运行。
 6. 模块之间的组织和管理必须使用 Maven。
 7. 步骤一中生成的 JSON 文件，必须保存在对应规范目录下的 `0` 文件夹中。
-8. JSON 必须严格遵循 `src/template.json` 的结构与字段命名。
+8. JSON 必须严格遵循 `template.json` 的结构与字段命名。
 9. 每条规范对应的目录、测试用例目录及相关产物目录，统一放在 `src/main/java` 下。
 10. 每条规范对应的一级模块必须作为整个项目根模块（根 `pom.xml`）的直接子模块。
 11. JSON 产物必须通过 Python 脚本生成，不允许手工拼装或手工编辑为主流程。
 12. 每个用例模块的违规代码统一尽量保留一个 `org.example.Main` 类，非必要不生成额外业务类。
+13. 当前仓库已存在的规范一级模块示例：`src/main/java/avoid_double_equals_for_objects`、`src/main/java/ensure_no_useless_object_references`；新增规范按同级目录扩展。
 
 # 命名规则
 
@@ -54,7 +55,7 @@ tools: [read, write, edit, bash]
 
 1. 文件夹名称统一使用 `spec_snake_name`，且路径位于 `src/main/java/<spec_snake_name>`。
 2. 模块名称统一使用 `spec_camel_name`。
-3. JSON 中测试因子的结构与字段命名必须遵循 `src/template.json`。
+3. JSON 中测试因子的结构与字段命名必须遵循 `template.json`。
 
 # 失败处理
 
@@ -77,12 +78,12 @@ tools: [read, write, edit, bash]
 1. 从终端一次读取一条规范。
 2. 用户先给出该规范的测试因子数量与因子名称。
 3. 基于用户给定因子，补全可落地的因子取值、边界场景和用例描述。
-4. 使用 Python 脚本将所有测试因子及其对应的用例描述保存为 JSON 文件（结构严格对齐 `src/template.json`）。
+4. 使用 Python 脚本将所有测试因子及其对应的用例描述保存为 JSON 文件（结构严格对齐 `template.json`）。
 5. 将生成的 JSON 文件（以及对应生成脚本）保存到该规范目录下的 `0` 文件夹中。
 
 ## 输出要求
 
-1. JSON 结构必须遵循 `src/template.json`，字段名和层级保持一致。
+1. JSON 结构必须遵循 `template.json`，字段名和层级保持一致。
 2. 测试因子拆解必须能直接支撑步骤二的代码生成，避免后续再次解释语义。
 
 ## 推荐的数据结构
@@ -111,17 +112,18 @@ tools: [read, write, edit, bash]
 5. 对每条规范创建一个新的一级模块。
 6. 该模块名称使用该规范名的驼峰命名，即 `spec_camel_name`。
 7. 该一级模块必须在根 `pom.xml` 的 `<modules>` 中声明为子模块。
-8. 在规范文件夹下，按规则为每个用例创建外层序号目录，序号计算方式为 `a*100 + b`。
+8. 该一级模块目录下必须提供聚合 `pom.xml`，并在其 `<modules>` 中声明所有外层序号目录下的用例模块（可参考 `avoid_double_equals_for_objects/pom.xml` 与 `ensure_no_useless_object_references/pom.xml`）。
+9. 在规范文件夹下，按规则为每个用例创建外层序号目录，序号计算方式为 `a*100 + b`。
    - `a`：该样例涉及到的第一个测试因子在 JSON 汇总测试因子列表中的序号（从 1 开始）；
    - `b`：该样例在该测试因子下的序号（从 1 开始）。
-9. 在每个外层序号目录下，再创建用例模块目录，模块目录名称使用“规范驼峰名 + 外层序号”的形式，例如：`avoidArrayIndexOutOfBounds101`。
-10. 在每个内层用例模块目录内创建一个独立模块，不使用 `src` 作为用例顶层目录名。
-11. 每个用例模块中只生成一个违规样例类：`org.example.Main`。
-12. `Main.java` 必须放在内层用例模块目录下的 `src/main/java/org/example/Main.java`（即 `<spec_snake_name>/<outer_case_no>/<case_module_dir>/src/main/java/org/example/Main.java`）。
-13. 每个样例都必须提供执行入口：`public static void main(String[] args)`。
-14. 每个用例中的 Java 代码必须严格围绕该规范对应的测试因子来构造。
-15. 代码不要求能够正常运行，但必须清晰表达出违反规范的具体方式。
-16. **严格遵守 Javadoc 注释规范：**
+10. 在每个外层序号目录下，再创建用例模块目录，模块目录名称使用“规范驼峰名 + 外层序号”的形式，例如：`avoidArrayIndexOutOfBounds101`。
+11. 在每个内层用例模块目录内创建一个独立模块，不使用 `src` 作为用例顶层目录名。
+12. 每个用例模块中只生成一个违规样例类：`org.example.Main`。
+13. `Main.java` 必须放在内层用例模块目录下的 `src/main/java/org/example/Main.java`（即 `<spec_snake_name>/<outer_case_no>/<case_module_dir>/src/main/java/org/example/Main.java`）。
+14. 每个样例都必须提供执行入口：`public static void main(String[] args)`。
+15. 每个用例中的 Java 代码必须严格围绕该规范对应的测试因子来构造。
+16. 代码不要求能够正常运行，但必须清晰表达出违反规范的具体方式。
+17. **严格遵守 Javadoc 注释规范：**
     - 必须为公有类(public)、接口、类的公有和受保护属性(public/protected)、类的公有和受保护方法（含构造方法）添加 Javadoc 注释。
     - **豁免项：** 带有 `@Override` 的方法、使用 JUnit 框架默认的 `@BeforeClass` 和 `@AfterClass` 方法可以不加 Javadoc。
     - **顶层 public 类的 Javadoc：** 必须包含功能说明
@@ -143,15 +145,15 @@ tools: [read, write, edit, bash]
     - **方法的 Javadoc：** 应该包含功能说明，并按照实际需要，按顺序使用 `@param`、`@return`、`@throws` 标签对应说明。
     - 不需要添加注释的方法，无需添加空的、只有格式的注释骨架。
     - 注释符（如 `*` 或 `//`）与注释内容之间应有空格，注释与代码之间应视情况保留空行或空格。
-17. **严格遵守代码日志输出规范：**
+18. **严格遵守代码日志输出规范：**
     - 禁止使用 `System.out.println` 等标准输出方式。
     - 必须使用 Lombok 配合 Slf4j 进行日志输出。在类上添加 `@Slf4j` 注解，代码中使用 `log.info(...)`、`log.error(...)` 等方式（如：`log.info("viol");`）。
-18. **严格遵守检查点与测试因子内联注释规范：**
+19. **严格遵守检查点与测试因子内联注释规范：**
     - 测试因子的声明注释必须放置在最能体现该因子特征的代码行行尾，格式为：`// 测试因子(factor_key=value_key)`。
     - 违规点的声明注释必须放在直接触发规范违规代码（行尾），格式为：`// 检查点`。
     - **合并规则：** 如果仅当同一行代码既是因子体现点又是违规触发点时，这时注释必须合并在一行，格式为：`// 检查点, 测试因子(factor_key=value_key)`。
     - 一个用例只允许对应一条测试因子。
-19. 所有模块及模块间组织必须通过 Maven 管理。
+20. 所有模块及模块间组织必须通过 Maven 管理。
 
 
 ## 输出要求
@@ -162,9 +164,8 @@ tools: [read, write, edit, bash]
 4. 不要为了让代码能运行而削弱违规特征。
 5. 代码中违规点必须清晰、集中、可定位。
 6. 插桩注释 `// 检查点` 必须紧跟在违规代码行的行尾，不可遗漏。
-7. 每个规范对应的步骤一产物，也必须保存在该规范目录下的 `00` 文件夹中。
 7. 每个规范对应的步骤一产物，也必须保存在该规范目录下的 `0` 文件夹中。
-8. `// 测试因子(...)` 中的 `factor_key` 和 `value_key` 必须与该规范 JSON 文件中的测试因子键名及取值键名一致（以 `src/template.json` 的结构为准）。
+8. `// 测试因子(...)` 中的 `factor_key` 和 `value_key` 必须与该规范 JSON 文件中的测试因子键名及取值键名一致（以 `template.json` 的结构为准）。
 9. `// 测试因子(...)` 必须真实反映该样例实际覆盖的测试因子，必须放置在对应代码行的行尾。不允许声明未覆盖的关键因子。
 10. 外层目录编号必须能由 JSON 因子顺序与样例在对应因子下的序号反推得到，并与 `// 测试因子(...)` 保持一致。
 
@@ -197,7 +198,7 @@ tools: [read, write, edit, bash]
 3. 不要为了让代码通过编译或运行而主动修复目标违规点。
 4. 不要漏掉 `// 检查点` 插桩。
 5. 不要跳过无法完成的规范而不做记录。
-6. 不要在 JSON 中使用与 `src/template.json` 不一致的测试因子结构或字段命名。
+6. 不要在 JSON 中使用与 `template.json` 不一致的测试因子结构或字段命名。
 7. 不要生成与规范无关的大量样板代码。
 9. 不要生成缺少 `// 测试因子(...)` 注释的样例代码。
 10. 不要在 `// 测试因子(...)` 中使用与 JSON 不一致的因子名或取值名。

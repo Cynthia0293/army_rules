@@ -9,6 +9,7 @@
         <groupId>org.example</groupId>
         <artifactId>ensureNoUselessObjectReferences</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <!-- 项目坐标 -->
@@ -18,5 +19,5 @@
 
     <!-- 项目描述 -->
     <name>Ensure No Useless Object References 203</name>
-    <description>storage_scope=全局注册表（如</description>
+    <description>storage_scope=global_registry_scope</description>
 </project>

@@ -9,6 +9,7 @@
         <groupId>org.example</groupId>
         <artifactId>ensureNoUselessObjectReferences</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <!-- 项目坐标 -->
@@ -18,5 +19,5 @@
 
     <!-- 项目描述 -->
     <name>Ensure No Useless Object References 307</name>
-    <description>coding_defect=集合清空后容器本身未置</description>
+    <description>coding_defect=container_not_null</description>
 </project>

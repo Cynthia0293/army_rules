@@ -16,12 +16,16 @@ import lombok.extern.slf4j.Slf4j;
 public class Main {
     /**
      * 主方法，执行程序入口。
+     *
      * @param args 命令行参数
      */
     public static void main(String[] args) {
         class Person {
             String name;
-            Person(String name) { this.name = name; }
+
+            Person(String name) {
+                this.name = name;
+            }
         }
         Person p1 = new Person("test"); // 测试因子(compared_object_type=custom_pojo)
         Person p2 = new Person("test");

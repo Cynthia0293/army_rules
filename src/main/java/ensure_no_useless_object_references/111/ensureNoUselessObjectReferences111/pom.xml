@@ -9,6 +9,7 @@
         <groupId>org.example</groupId>
         <artifactId>ensureNoUselessObjectReferences</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <!-- 项目坐标 -->
@@ -18,5 +19,5 @@
 
     <!-- 项目描述 -->
     <name>Ensure No Useless Object References 111</name>
-    <description>holder_object_type=类加载器（ClassLoader）引用残留</description>
+    <description>holder_object_type=class_loader</description>
 </project>

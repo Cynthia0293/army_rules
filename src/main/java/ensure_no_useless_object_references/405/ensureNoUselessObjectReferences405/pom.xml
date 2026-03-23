@@ -9,6 +9,7 @@
         <groupId>org.example</groupId>
         <artifactId>ensureNoUselessObjectReferences</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <!-- 项目坐标 -->
@@ -18,5 +19,5 @@
 
     <!-- 项目描述 -->
     <name>Ensure No Useless Object References 405</name>
-    <description>reference_type=虚引用（PhantomReference）误用导致无法回收</description>
+    <description>reference_type=phantom_ref_misuse</description>
 </project>

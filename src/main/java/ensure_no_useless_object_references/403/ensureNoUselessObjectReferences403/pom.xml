@@ -9,6 +9,7 @@
         <groupId>org.example</groupId>
         <artifactId>ensureNoUselessObjectReferences</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <!-- 项目坐标 -->
@@ -18,5 +19,5 @@
 
     <!-- 项目描述 -->
     <name>Ensure No Useless Object References 403</name>
-    <description>reference_type=软引用缓存未设置淘汰策略，导致</description>
+    <description>reference_type=soft_ref_cache_no_evict</description>
 </project>

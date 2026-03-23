@@ -9,6 +9,7 @@
         <groupId>org.example</groupId>
         <artifactId>ensureNoUselessObjectReferences</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <!-- 项目坐标 -->
@@ -18,5 +19,5 @@
 
     <!-- 项目描述 -->
     <name>Ensure No Useless Object References 308</name>
-    <description>coding_defect=资源包装类未关闭（如</description>
+    <description>coding_defect=璧勬簮鍖呰绫绘湭鍏抽棴锛堝</description>
 </project>

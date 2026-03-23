@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Main {
     /**
      * 主方法，执行程序入口。
+     *
      * @param args 命令行参数
      */
     public static void main(String[] args) {
@@ -27,13 +28,14 @@ public class Main {
 
     /**
      * 比较方法
+     *
      * @param s1 字符串1
      * @param s2 字符串2
      * @return 比较结果
      */
     private static boolean compare(String s1, String s2) {
         return s1 == s2; // 检查点, 测试因子(syntax_context=return_statement)
-    } 
+    }
 }
 
 

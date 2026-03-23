@@ -16,11 +16,14 @@ import lombok.extern.slf4j.Slf4j;
 public class Main {
     /**
      * 主方法，执行程序入口。
+     *
      * @param args 命令行参数
      */
     public static void main(String[] args) {
         class CloneableData implements Cloneable {
-            CloneableData() { }
+            CloneableData() {
+            }
+
             @Override
             public Object clone() throws CloneNotSupportedException {
                 return super.clone();
